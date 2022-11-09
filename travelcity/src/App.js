@@ -1,9 +1,9 @@
-import React from 'react';
-import { HeaderInputs } from './Components/Carbook/HeaderInputs';
+import { Carbook } from "./Component/Carbook/Carbook";
+
 function App() {
   return (
-    <div>
-      <HeaderInputs/>
+    <div className="App">
+    <Carbook/>
     </div>
   );
 }
