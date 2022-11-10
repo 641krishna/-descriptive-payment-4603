@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Footer from '../Components/Footer/Footer'
+import { Footer } from '../Components/Footer/Footer'
 import { Home } from '../Components/Homepage/Home'
 export default function Routing() {
     return (
@@ -16,7 +16,7 @@ export default function Routing() {
                 <Route path='/carlist' element={<Carsection />}></Route>
                 <Route path='/carreserve/:id' element={<Reserv />}></Route> */}
             </Routes>
-            <Footer/>
+            <Footer />
         </div>
     )
 }
