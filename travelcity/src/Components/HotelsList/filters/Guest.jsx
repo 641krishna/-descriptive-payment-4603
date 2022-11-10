@@ -37,7 +37,7 @@ const Guest = () => {
           <RadioGroup
             aria-label="guest-rating"
             name="guest-rating"
-            value={guestRating}
+            value={guest}
             onChange={handleChange}
           >
             <FormControlLabel

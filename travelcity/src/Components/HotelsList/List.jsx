@@ -10,6 +10,10 @@ import {
   FormControlLabel,
   CircularProgress,
   makeStyles,
+  Button,
+  Radio,
+  RadioGroup,
+  Box,
 } from "@material-ui/core";
 
 import HotelCard from "./HotelCard";
@@ -67,6 +71,10 @@ const Travel = styled.div`
     margin-bottom: 10px;
     width: 100px;
   }
+  .menuDrop {
+    cursor:pointer
+    align-items: center;
+  }
 `;
 const HList = () => {
   const [data, setData] = useState([]);
@@ -95,7 +103,7 @@ const HList = () => {
         }
         return false;
       });
-      if (searchedInfo.length == 0 || value === "") getData();
+      if (searchedInfo.length === 0 || value === "") getData();
       else setList(searchedInfo);
     }
   };
@@ -118,13 +126,14 @@ const HList = () => {
   };
 
   const getData = () => {
-    setLoad(false);
+    setLoad(true);
     axios
       .get("https://fake-product.herokuapp.com/hotel")
       .then((res) => {
         const { data } = res;
         setData(data);
-        setList(data);
+        setList(data.hotel);
+        // console.log(data)
         setLoad(false);
       })
       .catch((err) => {
@@ -156,6 +165,17 @@ const HList = () => {
     <div>
       {/* datesearchbar */}
 
+      <div className="menuDrop">
+        <Box className="selectMenu">
+          <select name="Sort By" className="selectmenu">
+            <option value="option1">Recommended</option>
+            <option value="option2">Price</option>
+            <option value="option3">Distance from airport</option>
+            <option value="option3">Price & Our highlights</option>
+            <option value="option3">Star Category</option>
+          </select>
+        </Box>
+      </div>
       <Travel className="Travel">
         <div>
           <iframe
@@ -211,6 +231,10 @@ const HList = () => {
             onClick={() => {
               handStar(4);
             }}
+            className={small.button}
+            variant="contained"
+            color="default"
+            endIcon={<StarRateIcon />}
           >
             4
           </Button>

@@ -1,3 +1,4 @@
+import { Select } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
 import "./Main.css";
@@ -96,7 +97,8 @@ const HotelCard = ({ data, openModal }) => {
           <div className="description">Fully refundable</div>
           <div className="description">Reserve Now Pay Later</div>
           <div className="rating">
-            <span className="star">{data.starRating}/5.0</span>Excellent (356 reviews)
+            <span className="star">{data.starRating}/5.0</span>Excellent (356
+            reviews)
           </div>
         </div>
       </div>

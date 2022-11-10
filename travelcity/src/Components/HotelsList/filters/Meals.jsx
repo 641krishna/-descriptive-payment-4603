@@ -4,7 +4,6 @@ import {
   FormControl,
   FormControlLabel,
   Checkbox,
-  FormGroup,
 } from "@material-ui/core";
 
 import "../Main.css";

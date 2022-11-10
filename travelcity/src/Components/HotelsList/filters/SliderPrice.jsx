@@ -1,14 +1,14 @@
-import { Slider } from "@material-ui/core";
 import React, { useState } from "react";
 
 import {
-  RangeSlider,
-  RangeSliderTrack,
-  RangeSliderFilledTrack,
-  RangeSliderThumb,
+  SliderFilledTrack,
+  SliderTrack,
+  SliderThumb,
+  SliderMark,
 } from "@chakra-ui/react";
 
 import styled from "styled-components";
+import { Slider } from "@material-ui/core";
 const Travel = styled.div`
   .filter-title {
     font-size: 1rem;
@@ -17,6 +17,8 @@ const Travel = styled.div`
   }
 `;
 const SliderPrice = () => {
+  const [sliderValue, setSliderValue] = useState(10);
+
   const [popular, setPopular] = useState("");
   const handleChange = (e) => {
     setPopular(e.target.value);
@@ -25,26 +27,24 @@ const SliderPrice = () => {
     <Travel>
       <div className="filter-title">Price per night</div>
 
-      <RangeSlider
-        value={value}
-        onChange={handleChange}
-        aria-label={["min", "max"]}
-        defaultValue={[10, 30]}
-      >
-        <RangeSliderTrack>
-          <RangeSliderFilledTrack />
-        </RangeSliderTrack>
-        <RangeSliderThumb index={0} />
-        <RangeSliderThumb index={1} />
-      </RangeSlider>
-      
-      {/* <Slider
-        getAriaLabel={() => "Temperature range"}
-        value={value}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        getAriaValueText={valuetext}
-      /> */}
+      <div>
+        <Slider
+          aria-label="slider-ex-1"
+          onChange={(v) => setSliderValue(v)}
+          defaultValue={20}
+        >
+          <SliderMark value={0} fontSize="sm">
+            $0
+          </SliderMark>
+          <SliderMark value={300} fontSize="sm">
+            $300+
+          </SliderMark>
+          <SliderTrack>
+            <SliderFilledTrack />
+          </SliderTrack>
+          <SliderThumb />
+        </Slider>
+      </div>
     </Travel>
   );
 };
