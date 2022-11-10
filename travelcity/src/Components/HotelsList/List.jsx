@@ -30,6 +30,8 @@ import "./Main.css";
 import logo from "../../Assests/images/logo.svg";
 import styled from "styled-components";
 import SliderPrice from "./filters/SliderPrice";
+import { HeaderInputs } from "./HeaderInputs";
+import Sort from "./filters/sort";
 
 const useStyling = makeStyles({
   button: {
@@ -116,7 +118,7 @@ const HList = () => {
 
   const handleFilter = (a, b) => {
     setLoad(true);
-    const newData = data.filter((ele) => {
+    const newData = data.hotel.filter((ele) => {
       return ele.price >= a && ele.price < b;
     });
     setList(newData);
@@ -141,11 +143,10 @@ const HList = () => {
       });
   };
 
-  
   const handStar = useCallback(
     (star) => {
       setLoad(true);
-      const newData = data.filter((ele) => {
+      const newData = data.hotel.filter((ele) => {
         return ele.starRating >= star;
       });
       setList(newData);
@@ -164,19 +165,7 @@ const HList = () => {
   }, []);
   return (
     <div>
-      {/* datesearchbar */}
-
-      <div className="menuDrop">
-        <Box className="selectMenu">
-          <select name="Sort By" className="selectmenu">
-            <option value="option1">Recommended</option>
-            <option value="option2">Price</option>
-            <option value="option3">Distance from airport</option>
-            <option value="option3">Price & Our highlights</option>
-            <option value="option3">Star Category</option>
-          </select>
-        </Box>
-      </div>
+      <HeaderInputs />
       <Travel className="Travel">
         <div>
           <iframe
@@ -187,6 +176,7 @@ const HList = () => {
           ></iframe>
           <SearchBox handQuery={handQuery} query={search} />
 
+          <Sort />
           {/* sliderprice */}
           <SliderPrice />
 
@@ -194,7 +184,7 @@ const HList = () => {
           <Guest />
 
           {/* ======star rating ==========*/}
-      
+
           <div className="filter-title">Property category</div>
           <Button
             onClick={() => {
