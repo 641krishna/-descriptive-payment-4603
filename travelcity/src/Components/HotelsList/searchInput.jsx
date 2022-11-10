@@ -1,8 +1,7 @@
-import "./HotelList.scss";
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-
+import "./Main.css";
 
 export default function HeaderInput() {
   return (
