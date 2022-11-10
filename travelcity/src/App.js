@@ -1,9 +1,9 @@
 import React from 'react';
-import AllRoutes from './Routes/AllRoutes';
+import Routing from './Routes/Routing';
 function App() {
   return (
     <div>
-      <AllRoutes />
+      <Routing />
     </div>
   );
 }

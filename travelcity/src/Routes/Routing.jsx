@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HotelList from "../Pages/Hotels/HotelList";
 
-const AllRoutes = () => {
+const Routing = () => {
   return (
     <Routes>
       <Route path="/" element={<HotelList />}></Route>
@@ -11,4 +11,4 @@ const AllRoutes = () => {
   );
 };
 
-export default AllRoutes;
+export default Routing;
