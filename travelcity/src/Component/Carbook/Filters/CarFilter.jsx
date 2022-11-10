@@ -7,14 +7,18 @@ const Form = styled(FormControlLabel)`
 `
 const Wraper = styled.div`
  display:flex;
-
+ width:"100%"
+ 
+ @media (max-width: 600px) {
+  justify-item:space-around;
+}
  .fromgroup{
     color: #505c66;
     font-size:2px;
  }
 
  .p-tag{
-    line-height:1.9;
+    line-height:1.6;
     margin-top:32px;
     margin-left:80px;
     color:#505c66
@@ -29,38 +33,45 @@ const Wraper = styled.div`
 `
 const Wraper1 = styled.div`
   display:flex;
+  width:"100%";
   justify-content:space-between;
 
   p{
     color: #505c66
   }
+  .p-tag{
+    line-height:1.6;
+    margin-top:32px;
+    margin-left:80px;
+    color:#505c66
+ }
 `
 export const Filter=()=>{
     const[economy,setEconomy]=React.useState("");
     const handleChange=(e)=>{
-        setEconomy(e.target.value)
+         setEconomy(e.target.value);
     }
 
    return(
-    <div style={{width:"100%"}} >
+    <div style={{width:"90%"}} >
         <h3>Filter by</h3>
-            <Wraper>
+            <Wraper1>
                  <div>
                      <h4>Car Type</h4>
                      <FormGroup className='fromgroup' name="search" value={economy} onChange={(e)=>handleChange(e)}>
-                     <Form control={<Checkbox />} label="Economy (12)" value="economy" style={{fontSize:"5px"}}/>
-                        <FormControlLabel control={<Checkbox />} label="Compact (12)" />
-                        <FormControlLabel control={<Checkbox />} label="Midsize (13)" />
-                        <FormControlLabel control={<Checkbox />} label="Standard (12)" />
-                        <FormControlLabel control={<Checkbox />} label="Full-size (18)" />
-                        <FormControlLabel control={<Checkbox />} label="Premium (22)" />
-                        <FormControlLabel control={<Checkbox />} label="Luxury (10)" />
-                        <FormControlLabel control={<Checkbox />} label="Convertible (2)" />
-                        <FormControlLabel control={<Checkbox />} label="Minivan (10)" />
-                        <FormControlLabel control={<Checkbox />} label="SUV (50)" />
-                        <FormControlLabel control={<Checkbox />} label="Pickup (16)" />
-                        <FormControlLabel control={<Checkbox />} label="Sports Car (6" />
-                        <FormControlLabel control={<Checkbox />} label="Other (24)" />
+                      <Form control={<Checkbox />} label="Economy" value="Economy" style={{fontSize:"5px"}}/>
+                        <FormControlLabel control={<Checkbox />} label="Compact" value="Compact" />
+                        <FormControlLabel control={<Checkbox />} label="Midsize" value="Midsize"/>
+                        <FormControlLabel control={<Checkbox />} label="Standard" value="Standard" />
+                        <FormControlLabel control={<Checkbox />} label="Full-size" value="Full-size"/>
+                        <FormControlLabel control={<Checkbox />} label="Premium" value="Premium"/>
+                        <FormControlLabel control={<Checkbox />} label="Luxury" value="Luxury"/>
+                        <FormControlLabel control={<Checkbox />} label="Convertible" value="Convertible"/>
+                        <FormControlLabel control={<Checkbox />} label="Minivan" value="Minivan" />
+                        <FormControlLabel control={<Checkbox />} label="SUV" value="SUV"/>
+                        <FormControlLabel control={<Checkbox />} label="Pickup" value="Pickup"/>
+                        <FormControlLabel control={<Checkbox />} label="Sports" value="Sports" />
+                        <FormControlLabel control={<Checkbox />} label="Other" value="Other"/>
                      </FormGroup>
                  </div>
                  <div>
@@ -81,12 +92,12 @@ export const Filter=()=>{
                         <p>$205</p>
                     </div>
                  </div>
-            </Wraper>
+            </Wraper1>
             <Wraper1>
                 <FormGroup>
                     <h4>Capacity</h4>
-                    <FormControlLabel control={<Checkbox/>}label="2-5 passengers (30)"/>
-                    <FormControlLabel control={<Checkbox/>} label="above 5 passengers (6)"/>
+                    <FormControlLabel control={<Checkbox/>}label="2-5 passengers"/>
+                    <FormControlLabel control={<Checkbox/>} label="above 5 passengers"/>
                 </FormGroup>
                 <div>
                     <div className='p-tag'>
@@ -99,7 +110,7 @@ export const Filter=()=>{
             <Wraper1>
                <FormGroup>
                  <h4>Cancellation policy</h4>
-               <FormControlLabel control={<Checkbox />} label="Free cancellation (139)" />
+               <FormControlLabel control={<Checkbox />} label="Free cancellation" />
                </FormGroup>
                 <div>
                     <div className='p-tag'>
@@ -112,7 +123,7 @@ export const Filter=()=>{
             <Wraper1>
             <FormGroup>
             <h4>Save time during pick-up</h4>
-            <FormControlLabel control={<Checkbox />} label="Online check-in (78)" />
+            <FormControlLabel control={<Checkbox />} label="Online check-in" />
             </FormGroup>
              <div>
                 <div className='p-tag'>
@@ -139,8 +150,8 @@ export const Filter=()=>{
             <Wraper1>
             <FormGroup>
                 <h4>Payment option</h4>
-                  <FormControlLabel control={<Checkbox />} label="Pay now (60)" />
-                    <FormControlLabel control={<Checkbox />} label="Pay later (139)" />
+                  <FormControlLabel control={<Checkbox />} label="Pay now " />
+                    <FormControlLabel control={<Checkbox />} label="Pay later " />
             </FormGroup>
             <div>
              <div className='p-tag'>

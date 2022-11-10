@@ -2,8 +2,8 @@ import { Carbook } from "./Component/Carbook/Carbook";
 
 function App() {
   return (
-    <div className="App">
-    <Carbook/>
+    <div style={{backgroundColor:"#F5F5F5"}}>
+      <Carbook/>
     </div>
   );
 }

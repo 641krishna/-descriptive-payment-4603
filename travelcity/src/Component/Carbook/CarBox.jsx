@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import axios from "axios"
 import styled from '@emotion/styled'
 import {Link} from 'react-router-dom';
 import {CircularProgress,InputLabel,MenuItem,FormControl,Select} from "@mui/material";
@@ -8,11 +7,13 @@ import person from "./CarLogoImages/person.png";
 import milege from "./CarLogoImages/milege.png";
 import star from "./CarLogoImages/star.png";
 import flight from "./CarLogoImages/flight.png";
+import {useDispatch, useSelector} from "react-redux"
+import { CarFetch, CarRefresh } from './CarRedux/Car.action';
 
 
 const Wraper = styled.div`
    gap:20px;
-   
+   width:100%;
    .progress{
     width:20%;
     margin:200px auto;
@@ -26,12 +27,9 @@ const Wraper = styled.div`
     width:100px;
    }
 
-   @media (max-width:600px){
+   @media (max-width:800px){
     .btn{
         align-items:center;
-    }
-    .ad-img{
-        display:none;
     }
    }
 `
@@ -41,16 +39,15 @@ const CarDiv = styled.div`
   justify-content : space-between;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius : 8px;
-  margin-bottom : 10px;
+  margin-bottom : 20px;
   background-color : white;
-
- @media(max-width:600px){
-    width:100vw;
-
+ @media(max-width:800px){
+    width:100%;
     .greatdeal{
-        line-heigth:1.6;
+        line-heigth:0.6;
         color:#333333;
-        font-size : 12px
+        font-size :12px;
+        width:"20%";
     }
     .non-refund{
         display:none;
@@ -62,15 +59,23 @@ const CarDiv = styled.div`
     FormControl{
         display : none; 
     }
+    .div1{
+        width:"25%"
+    }
  }
+ .div1{
+    width:"20%"
+}
 
  .greatdeal{
     line-heigth:0.6;
-    color:#333333
+    color:#333333;
+    width:"20%"
+    margin-bottom:"5px"
  }
  .non-refund{
     line-height: 0.6;
-    margin-top : 50px;
+    margin-top : 38px;
     margin-left : -50px
  }
  .price{
@@ -83,15 +88,15 @@ const CarDiv = styled.div`
 
 .imge-div img{
  width : 20px;
- height : 21px;
- margin-top: 8px;
+ height : 19px;
+ margin-top: 4px;
  margin-right : 5px
-    }
+}
 
 .imge-div p{
-line-height: 0.5;
-margin-bottom : -1px;
-font-size:14px;
+line-height: 0.8;
+margin-bottom : -5px;
+font-size:11px;
 }
 `
 const SortDiv = styled.div`
@@ -132,92 +137,72 @@ margin : auto
  `
 
 export const CarBox=()=>{
-    const[loading,setLoading]=useState(false);
-    const[error,setError]=useState(false);
-    const [carData, setCarData] = useState([]);
-    const [sortValue,setSortValue] = useState("") 
-    const [page,setPage] = useState(1)
+    let CopyData = []
+    const [sortValue,setSortValue] = useState("");
+    const {Cardata,error,loading} = useSelector((state)=>state.Car);
+    const dispatch = useDispatch()
     
     useEffect(()=>{
-            getData()
-    },[page])
-
-    const getData=async()=>{
-        setLoading(true);
-        try{
-            let response = await axios.get(`https://carapi20.herokuapp.com/Car?_page=${page}&_limit=5`);
-            const data = response.data;
-            setCarData(data);
-        }
-        catch(err){
-            setError(true)
-        }
-        finally{
-            setLoading(false)
-        }
-    }
-    console.log(carData)
-
+           dispatch(CarFetch())
+    },[])
+ 
     const handleChange=(e)=>{
         setSortValue(e.target.value)
-        carData.sort((a,b)=>a.price-b.price)
+        if(sortValue==="Price"){
+            let copyData = Cardata.sort((a,b)=>b.price-a.price)
+            CopyData=copyData
+        }
+        else if(sortValue==="ReFresh" || sortValue===""){
+            dispatch(CarFetch())
+            CopyData=Cardata
+        }
     }
-
     const handleShowMore = async()=>{
-        setLoading(true)
-        try{
-            let response = await axios.get(`https://fake-product.herokuapp.com/car`);
-            const data = response.data;
-            data = data.car;
-            setCarData(data);
-        }
-        catch(err){
-            setError(true)
-        }
-        finally{
-            setLoading(false)
-        }
+       dispatch(CarRefresh())
+       CopyData=Cardata
     }
-
-    const handleReserve = (id) => {
-        // console.log(id)
-    }
-
+   if(loading){
+     return(<div className='progress'>
+     <img src='https://raw.githubusercontent.com/Prashant-Bhatiya/Travelocity-clone/ad148d0be04ab12faeef4705dbb701ffd3a914e9/src/logo.svg' alt='logo'/>
+     <CircularProgress/>
+   </div>)
+   }
+   if(error){
+    <div>Something Went Wrong</div>
+   } 
+   CopyData = Cardata;
     return (
-         <div>
+         <div style={{width:"100%"}}>
             <Wraper>
                 <SortDiv>
                     <div className='totalCars'>
-                        <p>{carData.length}  Cars • Total includes taxes and fees</p>
-                        <p style={{fontSize:"12px"}}>Learn more about our Great Deals</p>
+                        <p>{CopyData.length}  Cars • Total</p>
+                        <p style={{fontSize:"10px",lineHeight:"10px"}}>Learn more about our Great Deals</p>
                     </div>
                     <FormControl sx={{m:1,minWidth:288}} size="small" style={{backgroundColor:"white"}}>
                       <InputLabel id="demo-select-small">Sort</InputLabel>
                        <Select labelId='demo-select-small' id="demo-select-small" value={sortValue} label="Age" onChange={(e)=>handleChange(e)}>
-                          <MenuItem value=""></MenuItem>
-                          <MenuItem value={10}>Total Price</MenuItem>
-                          <MenuItem value={20}>Customer Rating</MenuItem>
-                          <MenuItem value={30}>Recommended</MenuItem>
+                          <MenuItem value="">Sorting</MenuItem>
+                          <MenuItem value={"Price"}>ReFresh</MenuItem>
+                          <MenuItem value={"Rating"}>Total Price</MenuItem>
+                          <MenuItem value={"ReFresh"}>Rating</MenuItem>
                        </Select>
                     </FormControl>
                 </SortDiv>
                 {
-                    loading?<div className='progress'>
-                      <img src='https://raw.githubusercontent.com/Prashant-Bhatiya/Travelocity-clone/ad148d0be04ab12faeef4705dbb701ffd3a914e9/src/logo.svg' alt='logo'/>
-                      <CircularProgress/>
-                    </div>:error?<div>Something Went Wrong</div>:carData.map((data)=>
+                    CopyData.map((data)=>
                     <CarDiv key={data.id}>
-                        <div>
-                        <img src={data.url} alt="" style={{ marginTop: "80px" }} />
+                        <div  className="div1">
+                        <img src={data.url} alt="" width ="100%" height="70px" style={{ marginTop: "80px" }} />
                         </div>
 
                         <div className='greatdeal'>
                           <button style={{heigth:"24px",width:"74px",backgroundColor:"#1f7d57", fontSize: "12px", color: "white", borderRadius: "3px", border: "none", marginTop: "10px" }}>Great Deal</button>
                           <h3>{data.car_type}</h3>
-                          <p>{data.car_name} or similar</p>
+                          <p >{data.car_name}</p>
 
                                 <div className='imge-div'>
-                                    <img src={person} alt="" />  <p> 4 Automatic</p>
+                                    <img src={person} alt="" />  <p style={{lineHeight:"3px"}}> 4 Automatic</p>
                                 </div>
                                 <div className='imge-div'>
                                     <img src={milege} alt="" /> <p> Unlimited mileage</p>
@@ -225,7 +210,7 @@ export const CarBox=()=>{
                                 <div className='imge-div'>
                                     <img src={star} alt="" /><p >Enhanced cleaning</p>
                                 </div>
-                                <div className='imge-div'>
+                                <div className='imge-div' style={{paddingBottom:"10px"}}>
                                     <img src={flight} alt="" /><p>Counter in terminal, shuttle to car</p>
                                 </div>
                         </div>
@@ -244,15 +229,15 @@ export const CarBox=()=>{
                                 <h3 style={{ color: "#505c66" }}>${data.price}</h3>
                                 <p>per day </p>
 
-                               <Link to={`/carreserve/${data.id}`}><Button onClick={() => handleReserve(data.id)} >Reserve</Button></Link> 
+                               <Link to={`/carreserve/${data.id}`}><Button>Reserve</Button></Link> 
                          </div>
                     </CarDiv>)
                 }
 
-                <div style={{marginLeft:"330px",marginBottom:"30px",marginTop:"20px"}} className="btn">
+                <div style={{width:"100%",marginBottom:"30px",marginTop:"20px"}} className="btn">
                    <Button1 onClick={handleShowMore} style={{justifyContent:"center"}}>Show More</Button1>
                 </div>
-                <img src="https://tpc.googlesyndication.com/simgad/6177323794858097722?" alt="banner" style={{marginLeft:"20px"}} className="ad-img"/>
+                <img src="https://tpc.googlesyndication.com/simgad/6177323794858097722?" width="100%" alt="banner" style={{marginLeft:"20px"}} className="ad-img"/>
             </Wraper>
          </div>
     )
