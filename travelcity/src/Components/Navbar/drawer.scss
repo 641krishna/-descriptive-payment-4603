@@ -1,0 +1,129 @@
+@import "../../global.scss";
+
+#NavbarSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#NavLeftSection{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    gap: 40px;
+}
+#signinPopover {
+    padding: 24px 24px 12px;
+    border-radius: 16px;
+    max-width: 280px;   
+}
+
+#signinPopover>* {
+    padding: 12px 0px;
+    border-bottom: 1px solid lightgrey;
+    margin-top: 8px;
+}
+
+#userProfile{
+    padding: 0px 20px;
+   
+    h4,p{
+        cursor: pointer;
+    }
+  
+    button{
+        width: 100%;
+        border-radius: 5px;
+        border: 0px;
+        padding: 3px 8px;
+        margin: 0px;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: rgb(218, 218, 218);
+    }
+}
+
+#userProfile > *:hover{
+    color: blue;
+}
+
+#signinHeader-2 Button  {
+    font-weight: bold;
+    gap: 30px;
+}
+
+#signBtn{
+    cursor: pointer;
+}
+
+#createAcc {
+    text-align: center;
+    color: #0D5AB9;
+    cursor: pointer;
+    margin-top: 10px;
+ 
+}
+#moreTravel {
+    width: 280px;
+    padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  
+}
+
+#moreTravel>* {
+    padding: 12px 24px;
+    cursor: pointer;
+}
+#moreTravel :hover{
+  background-color: rgba(235, 243, 255, 0.877);
+}
+
+.iconstyle {
+    display: flex;
+}
+
+.iconstyle>div {
+    margin-left: 14px;
+}
+
+.linkstyle {
+    align-items: center;
+}
+
+#rightbar {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 23px;
+}
+#rightbar div{
+    cursor: pointer;
+}
+.userNameDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.navRightSmlScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+}
+
+
+
+#popoverid{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+@include mobile{
+    display: none;
+    // background-color: yellow;
+}
+
+}
