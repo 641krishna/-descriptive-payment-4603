@@ -79,6 +79,7 @@ const HotelCard = ({ data, openModal }) => {
     <Travel
       onClick={() => {
         openModal(data.hotelId);
+        // console.log(data)
       }}
       className="HotelCard"
     >

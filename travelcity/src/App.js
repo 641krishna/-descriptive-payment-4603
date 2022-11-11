@@ -4,8 +4,8 @@ import Routing from './Routes/Routing';
 function App() {
   return (
     <div>
-      {/* <Routing /> */}
-      <HotelList/>
+      <Routing />
+      {/* <HotelList/> */}
     </div>
   );
 }
