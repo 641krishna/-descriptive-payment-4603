@@ -19,7 +19,7 @@ const Travel = styled.div`
     margin-bottom: 1.5rem;
   }
 `;
-const SearchBox = ({ handleQuery, query }) => {
+const SearchBox = ({ handQuery, query }) => {
   const small = useStyling();
 
   return (
@@ -33,7 +33,7 @@ const SearchBox = ({ handleQuery, query }) => {
         color="primary"
         value={query}
         onChange={(e) => {
-          handleQuery(e.target.value);
+          handQuery(e.target.value);
         }}
       />
       <Divider className="divider" />
