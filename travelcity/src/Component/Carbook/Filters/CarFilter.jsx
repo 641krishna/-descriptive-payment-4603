@@ -1,6 +1,8 @@
 import React from 'react'
 import { FormGroup, FormControlLabel, Checkbox } from "@mui/material"
 import styled from '@emotion/styled'
+import { useDispatch } from 'react-redux'
+import { CarTypeFilter } from '../CarRedux/Car.action'
 
 const Form = styled(FormControlLabel)`
  font-size:10px;
@@ -48,8 +50,10 @@ const Wraper1 = styled.div`
 `
 export const Filter=()=>{
     const[economy,setEconomy]=React.useState("");
+    const dispatch = useDispatch()
     const handleChange=(e)=>{
          setEconomy(e.target.value);
+         dispatch(CarTypeFilter(e.target.value))
     }
 
    return(

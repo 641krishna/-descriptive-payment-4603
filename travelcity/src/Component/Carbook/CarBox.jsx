@@ -8,7 +8,7 @@ import milege from "./CarLogoImages/milege.png";
 import star from "./CarLogoImages/star.png";
 import flight from "./CarLogoImages/flight.png";
 import {useDispatch, useSelector} from "react-redux"
-import { CarFetch, CarRefresh } from './CarRedux/Car.action';
+import { CarFetch, CarInputFilter, CarRefresh, CarTypeFilter } from './CarRedux/Car.action';
 
 
 const Wraper = styled.div`
@@ -139,27 +139,39 @@ margin : auto
 export const CarBox=()=>{
     let CopyData = []
     const [sortValue,setSortValue] = useState("");
-    const {Cardata,error,loading} = useSelector((state)=>state.Car);
+    const {Cardata,error,loading,TypeFilter,InputFilter,InputStatus,TypeStatus} = useSelector((state)=>state.Car);
+    const[input2,setInput2]=useState(InputFilter);
     const dispatch = useDispatch()
-    
     useEffect(()=>{
            dispatch(CarFetch())
     },[])
+    CopyData = Cardata;
+    if(TypeStatus){
+        CopyData = Cardata.filter(ele=>ele.car_type===TypeFilter);
+      }
+    if(InputStatus){
+
+        CopyData = Cardata.filter(ele=>ele.car_name.includes(InputFilter,0));
+    }
  
     const handleChange=(e)=>{
         setSortValue(e.target.value)
-        if(sortValue==="Price"){
+        if(e.target.value==="High to Low"){
             let copyData = Cardata.sort((a,b)=>b.price-a.price)
             CopyData=copyData
         }
-        else if(sortValue==="ReFresh" || sortValue===""){
+        if(e.target.value==="Refresh" || e.target.value===""){
             dispatch(CarFetch())
             CopyData=Cardata
         }
+      if(e.target.value==="Low to High"){
+        let copyData = Cardata.sort((a,b)=>a.price-b.price)
+        CopyData=copyData
+      }
     }
-    const handleShowMore = async()=>{
-       dispatch(CarRefresh())
-       CopyData=Cardata
+    const handleShowMore =()=>{
+        dispatch(CarRefresh())
+        CopyData=Cardata
     }
    if(loading){
      return(<div className='progress'>
@@ -170,7 +182,6 @@ export const CarBox=()=>{
    if(error){
     <div>Something Went Wrong</div>
    } 
-   CopyData = Cardata;
     return (
          <div style={{width:"100%"}}>
             <Wraper>
@@ -183,9 +194,9 @@ export const CarBox=()=>{
                       <InputLabel id="demo-select-small">Sort</InputLabel>
                        <Select labelId='demo-select-small' id="demo-select-small" value={sortValue} label="Age" onChange={(e)=>handleChange(e)}>
                           <MenuItem value="">Sorting</MenuItem>
-                          <MenuItem value={"Price"}>ReFresh</MenuItem>
-                          <MenuItem value={"Rating"}>Total Price</MenuItem>
-                          <MenuItem value={"ReFresh"}>Rating</MenuItem>
+                          <MenuItem value="Refresh">ReFresh</MenuItem>
+                          <MenuItem value="Low to High">Low to High</MenuItem>
+                          <MenuItem value="High to Low">High to Low</MenuItem>
                        </Select>
                     </FormControl>
                 </SortDiv>

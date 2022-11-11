@@ -1,4 +1,4 @@
-import { CAR_ERROR, CAR_FETCH_DATA, CAR_LOADING, CAR_REFRESH } from "./Car.type"
+import { CAR_ERROR, CAR_FETCH_DATA, CAR_INPUT_FILTER, CAR_LOADING, CAR_REFRESH, CAR_TYPE_FILTER } from "./Car.type"
 import axios from "axios"
 
 export const CarLoading=(val)=>{
@@ -36,5 +36,17 @@ export const CarRefresh=()=>async(dispatch)=>{
     }
     finally{
         dispatch(CarLoading(false))
+    }
+}
+export const CarTypeFilter=(val)=>{
+    return{
+        type:CAR_TYPE_FILTER,
+        payload:val,
+    }
+}
+export const CarInputFilter=(val)=>{
+    return{
+        type:CAR_INPUT_FILTER,
+        payload:val,
     }
 }
