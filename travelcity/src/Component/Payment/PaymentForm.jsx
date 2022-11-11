@@ -78,13 +78,13 @@ export const PaymentForm = () => {
     return (
         <Wrapper>
             <div className="info">
-                <CreditCardIcon />
+                {/* <CreditCardIcon /> */}
                 <div className="message">
-                    <CheckIcon className={classes.icon} />
+                    {/* <CheckIcon className={classes.icon} /> */}
                     <p>We use secure transmission</p>
                 </div>
                 <div className="message">
-                    <CheckIcon className={classes.icon} />
+                    {/* <CheckIcon className={classes.icon} /> */}
                     <p>We protect your personal information</p>
                 </div>
             </div>

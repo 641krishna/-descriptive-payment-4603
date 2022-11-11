@@ -40,7 +40,7 @@ const Wrapper = styled.div`
 
 export const PriceDetail = ({ price }) => {
 
-  const paymentAmount = useSelector((state)=>state.paymentAmount); 
+  const paymentAmount = useSelector((state)=>state.paymentAmount);
 
   let {type,tax, Price} = JSON.parse(localStorage.getItem("PriceDetails"));
     return (
