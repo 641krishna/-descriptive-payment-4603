@@ -66,10 +66,10 @@ const useStyles = makeStyles((theme) => ({
 
     SocialBtn: {
         width: "50%",
-        padding : "10px",
+        padding: "10px",
         marginBottom: "20px",
         display: "flex",
-        justifyContent : "space-around",
+        justifyContent: "space-around",
     },
 
     icon: {
@@ -97,19 +97,19 @@ export const SignUp = () => {
         setState({ ...state, [name]: value });
     };
 
-    const handleSubmit =  (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         // console.log(state)
         axios
-        // .post("http://localhost:8080/users",state)
-        .post("https://carapi20.herokuapp.com/users",state)
-        .then((response)=>{
-            // console.log(response.status)
-            // history.push("/signIn");
-            alert("Registered Successfully");
-            navigate("/signIn")
-        })
-        .catch((err)=>alert("Something went wrong !"))
+            // .post("http://localhost:8080/users",state)
+            .post("https://carapi20.herokuapp.com/users", state)
+            .then((response) => {
+                // console.log(response.status)
+                // history.push("/signIn");
+                alert("Registered Successfully");
+                navigate("/signIn")
+            })
+            .catch((err) => alert("Something went wrong !"))
     };
 
     return (
@@ -122,9 +122,9 @@ export const SignUp = () => {
                     color="default"
                     onClick={() => loginWithRedirect()}
                 >
-                  <GoogleIcon /> <FacebookIcon />  <LinkedInIcon/>  <GitHubIcon />  
+                    <GoogleIcon /> <FacebookIcon />  <LinkedInIcon />  <GitHubIcon />
                 </Button>
-             
+
                 <div className="messege">
                     <span>
                         <VpnKeyIcon className={classes.icon} />
@@ -230,8 +230,9 @@ export const SignUp = () => {
                             variant="contained"
                             color="primary"
                             className={classes.submit}
+                            
                         >
-                            Sign Up
+                             <Link to="/signUp">Sign Up</Link>
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
@@ -241,7 +242,7 @@ export const SignUp = () => {
                     </form>
                 </div>
             </Container>
-       
+
         </Wrapper>
     );
 };
