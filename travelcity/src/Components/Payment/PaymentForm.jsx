@@ -58,8 +58,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const initState = {
-    name: "Damanjot_Singh",
-    card: "1234-5678-1234-5678",
+    name: "Damanjot Singh",
+    card: "9001-5656-5290-7904",
     month: "June",
     year: "2024",
     cvv: "001",
