@@ -8,6 +8,8 @@ const Routing = () => {
     <Routes>
       <Route path="/hotel" element={<HotelList />}></Route>
       <Route path="/hotel/:id" element={<Main />}></Route>
+      {/* <Route path="/hotel/:id" element={<HotelInfo />}></Route> */}
+
     </Routes>
   );
 };

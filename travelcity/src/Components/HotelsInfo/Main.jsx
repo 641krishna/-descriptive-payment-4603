@@ -70,9 +70,8 @@ const Main = () => {
       .then((res) => {
         const { data } = res;
         console.log(data);
-
         setData(data);
-        console.log(data);
+        // console.log(data);
       })
       .catch((err) => {
         console.log(err);
@@ -93,6 +92,7 @@ const Main = () => {
     //     console.log(err);
     //   });
   }, []);
+  // console.log(data?.images[0]?.url)
 
   return (
     <Travel>
@@ -105,13 +105,18 @@ const Main = () => {
             </div>
 
             <div>
+              {data[0]?.map((ele)=>(
+                 <div className="left">
+                 <img src={ele.images} alt="" />
+               </div>
+              ))}
               <div className="flex" style={{ cursor: "pointer" }}>
                 <div className="left">
-                  <img src={data.images[0].url} alt="" />
+                  <img src={data[0]?.images[0]?.url} alt="" />
                 </div>
-                <div className="right">
+                {/* <div className="right">
                   <div>
-                    <img src={data.images[1].url} alt="" />
+                    <img src={data?.images[1].url} alt="" />
                   </div>
                   <div>
                     <img src={data.images[2].url} alt="" />
@@ -122,10 +127,10 @@ const Main = () => {
                   <div>
                     <img src={data.images[4].url} alt="" />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
-            <div className="option">
+            {/* <div className="option">
               {options.map((option, i) => (
                 <p key={i}>
                   <a href={option.to}>{option.title}</a>
@@ -142,7 +147,7 @@ const Main = () => {
 
             <div id="reviews">
               <Review />
-            </div>
+            </div> */}
           </div>
 
           <div>
