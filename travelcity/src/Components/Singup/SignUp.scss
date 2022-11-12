@@ -1,0 +1,21 @@
+@import "../../global.scss";
+
+#mainContainer{
+
+
+    @include mobile{
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;  
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+ 
+    #container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+}
