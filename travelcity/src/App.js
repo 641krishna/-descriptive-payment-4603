@@ -1,11 +1,13 @@
 import React from 'react';
-import HotelList from './Pages/Hotels/HotelList';
-import Routing from './Routes/Routing';
+import { Navbar } from './Components/Navbar/Navbar';
+import { RoutesPage } from './Routes/Routing';
+import { Footer } from './Components/Footer/Footer';
 function App() {
   return (
     <div>
-      <Routing />
-      {/* <HotelList/> */}
+      <Navbar />
+      <RoutesPage />
+      <Footer/>
     </div>
   );
 }

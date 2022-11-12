@@ -1,17 +1,38 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Main from "../Components/HotelsInfo/Main";
-import HotelList from "../Pages/Hotels/HotelList";
+// import { Footer } from "../Components/Footer/Footer";
+// import { Navbar } from "../Components/Navbar/Navbar";
 
-const Routing = () => {
-  return (
-    <Routes>
-      <Route path="/hotel" element={<HotelList />}></Route>
-      <Route path="/hotel/:id" element={<Main />}></Route>
-      {/* <Route path="/hotel/:id" element={<HotelInfo />}></Route> */}
+import { HotelsListPage } from "../Pages/HotelListPage";
+import { Home } from "../Components/Homepage/Home";
+import { PaymentPage } from "../Pages/Payment_page";
+import { SignInPage } from "../Pages/SignIn_Page";
+import { SignUpPage } from "../Pages/SignUp_Page";
 
-    </Routes>
-  );
-};
+import { Carbook } from '../Components/Carbook/Carbook'
+// import { Carsection } from "../Pages/Carsection";
+import { Reserv } from "../Components/ReserveCar/Reserv";
+import MainHotelPage from "../Pages/MainHotelPage";
 
-export default Routing;
+
+export function RoutesPage() {
+    return (
+
+        <div>
+
+            <Routes>
+                <Route path="/" element={<Home />}></Route>
+
+                <Route path="/hotels" element={<HotelsListPage />}></Route>
+                <Route path="/hotels/:id" element={<MainHotelPage />}></Route>
+
+                <Route path="/signUp" element={<SignUpPage />}></Route>
+                <Route path="/signIn" element={<SignInPage />} ></Route>
+                <Route path="/payment" element={<PaymentPage />}></Route>
+                <Route path='/carlist' element={<Carbook />}></Route>
+                <Route path='/carreserve/:id' element={<Reserv />}></Route>
+            </Routes>
+
+        </div>
+
+    );
+}

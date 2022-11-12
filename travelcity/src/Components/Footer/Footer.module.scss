@@ -1,0 +1,78 @@
+@import "../../global.scss";
+
+.container {
+    margin: 0px;
+    padding: 50px 0px 0px;
+    overflow-x: hidden;
+    background: #f0f3f5;
+    text-align: start;
+}
+
+.flex {
+    display: flex;
+
+    @include mobile {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        text-align: start;
+        padding-right: 25px;
+        .footerLogo {
+            display: none;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footerLinks {
+    margin: 0;
+}
+
+.footerLinks>h3 {
+    color: #242C33;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.125rem;
+    margin: 0;
+}
+
+.footerLinks>li {
+    list-style-type: none;
+    margin: 10px 0px;
+    font-size: 0.75rem;
+    color: #0d5ab9;
+}
+
+.footerLinks>li>a:hover {
+    text-decoration: underline;
+}
+
+.footerLinks>li>a {
+    text-decoration: none;
+    color: #0d5ab9;
+}
+
+.footerHr {
+    width: 90%;
+    border: 0;
+    border-top: 1px solid #bcc4cc;
+    clear: both;
+    display: block;
+    height: 1px;
+    margin: 50px 0 30px 0px;
+    padding: 0;
+}
+
+
+.license>p {
+    text-align: center;
+    margin: 10px 0 20px 0px;
+    font-weight: 400;
+    color: #505C66;
+    font-size: 0.75rem;
+}

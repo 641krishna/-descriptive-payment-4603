@@ -1,0 +1,67 @@
+[
+    {
+        "Hotels": {
+            "h1": "Chicago Hotels",
+            "h2": "San Jose Hotels",
+            "h3": "Baltimore Hotels",
+            "h4": "Las Vegas Hotels",
+            "h5": "Maui Hotels",
+            "h6": "Oakland Hotels",
+            "h7": "Fort Walton Beach Hotels",
+            "h8": "Washongton Hotels",
+            "h9": "London Hotels",
+            "h10": "Paris Hotels",
+            "h11": "Cancun Hotels",
+            "h12": "Punta Cana Hotels"
+        },
+        "Flights": {
+            "fat1": "Flights to London",
+            "fat2": "Flights to Maui",
+            "fat3": "Flights to Washington, DC",
+            "fat4": "Flights to Fort Lauderdale",
+            "fat5": "Flights to St. Louis",
+            "fat6": "Flights to Frankfurt",
+            "fat7": "Flights to Barcelona",
+            "fat8": "Flights to Baltimore",
+            "fat9": "Flights to Paris",
+            "fat10": "Flights to Orange County",
+            "fat11": "Flights to Honolulu",
+            "fat12": "Flights to Los Cabos"
+        },
+        "Vacation": {
+            "vacation1": "Flights to London",
+            "vacation2": "Flights to Maui",
+            "vacation3": "Flights to Washington, DC",
+            "vacation4": "Flights to Fort Lauderdale",
+            "vacation5": "Flights to St. Louis",
+            "vacation6": "Flights to Frankfurt",
+            "vacation7": "Flights to Barcelona",
+            "vacation8": "Flights to Baltimore",
+            "vacation9": "Flights to Paris",
+            "vacation10": "Flights to Orange County",
+            "vacation11": "Flights to Honolulu",
+            "vacation12": "Flights to Los Cabos"
+        },
+        "Cars": {
+            "car1": "London Car Rentals",
+            "car2": "Maui Car Rentals",
+            "car3": "Fort Lauderdale Car Rentals",
+            "car4": "Honolulu Car Rental",
+            "car5": "Newark, NJ Car Rentals",
+            "car6": "San Juan Car Rentals",
+            "car7": "Dublin Car Rentals",
+            "car8": "Barcelona Car Rentals",
+            "car9": "Washington, DC Car Rentals",
+            "car10": "West Palm Beach Car Rentals",
+            "car11": "Madrid Car Rentals",
+            "car12": "Paris Car Rentals"
+        },
+        "Cruises":{
+            "cur1":"Bahamas Cruises",
+            "cur2":"Canada/New England",
+            "cur3":"Hawaii Cruises",
+            "cur4":"Mexico Cruises",
+            ""
+        }
+    }
+]
