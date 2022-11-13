@@ -36,7 +36,7 @@ This was a collaborative project made by 4 members Executed in 5 days.
 
   ![Landing Page](https://miro.medium.com/max/786/1*Rj6LpBn6y0Sq43QrdqRJnw.jpeg)
 
-- ** Payment Page**
+- **Payment Page**
 
   ![Landing Page](https://miro.medium.com/max/786/1*iHR-JZqErj3sJZrvRR_JCQ.jpeg)
 
