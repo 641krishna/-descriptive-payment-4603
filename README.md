@@ -3,10 +3,10 @@
 
 This was a collaborative project made by 4 members Executed in 5 days.
 
-@bhargavi35
-@641krishna
-@damanjot6767
-@UdayCreative
+- [@bhargavi35](https://github.com/bhargavi35)
+- [@641krishna](https://github.com/641krishna)
+- [@damanjot6767](https://github.com/damanjot6767)
+- [@UdayCreative](https://github.com/UdayCreative)
 
   Deploy Link -
   Netlify: https://thriving-hamster-345ef4.netlify.app/
