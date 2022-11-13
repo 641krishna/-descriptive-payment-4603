@@ -8,7 +8,8 @@ This was a collaborative project made by 4 members Executed in 5 days.
 - [@damanjot6767](https://github.com/damanjot6767)
 - [@UdayCreative](https://github.com/UdayCreative)
 
-  Deploy Link -
+#  Deploy Link 
+
   Netlify: https://thriving-hamster-345ef4.netlify.app/
 
 
