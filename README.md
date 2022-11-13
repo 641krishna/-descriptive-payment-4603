@@ -2,10 +2,11 @@
 # Travelocity-clone-website
 
 This was a collaborative project made by 4 members Executed in 5 days.
-1) Shrikrishna Aluri
-2) Uday Dinkar Patil 
-3) Bhargavi Chella
-4) Damanjot Singh
+
+@bhargavi35
+@641krishna
+@damanjot6767
+@UdayCreative
 
   Deploy Link -
   Netlify: https://thriving-hamster-345ef4.netlify.app/
