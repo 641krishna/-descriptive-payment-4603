@@ -29,7 +29,7 @@ This was a collaborative project made by 4 members Executed in 5 days.
 ### _Following are the Screenshots for the reference_
 
 - **Landing Page**
--
+
   ![Landing Page](https://miro.medium.com/max/786/1*544cRzRQkdy-th2eC8lXpA.jpeg)
 
 - **Log-in Page**
