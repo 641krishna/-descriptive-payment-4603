@@ -1,6 +1,8 @@
 
 # Travelocity-clone-website
 
+<h3>Book Your Hotels, Transport at Your Fingers</h3>
+
 This was a collaborative project made by 4 members Executed in 5 days.
 
 - [@bhargavi35](https://github.com/bhargavi35)
