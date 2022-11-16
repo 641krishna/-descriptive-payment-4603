@@ -1,0 +1,29 @@
+#Carname{
+    margin-left: 5px;
+}
+.top-section > div > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -3px;
+//   background-color: gray;
+
+  
+  p{
+    // margin-left: 7px;
+    margin: 0px;
+    text-align: start;
+    width: 200px;
+    
+  }
+  span{
+    width: 30px;
+    opacity: 0.8;
+    
+  }
+  #infor{
+    // display: flex;
+    // justify-content: flex-start;
+    width: 200px;
+  }
+}
