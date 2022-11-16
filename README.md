@@ -1,9 +1,7 @@
 
 # Travelocity-clone-website
 
-This is a Collaborative Project. we worked on Travelocity Clone website. Which is an online travel agency owned by Expedia Group. We added functionality like Signup, Login, Search Hotels & Cars, add to cart, and Payment Gateway. We used React, Redux, JavaScript, CSS, and Material UI to build this website.
-
-This was a collaborative project made by 4 members Executed in 5 days.
+This is a Collaborative Project. we worked on Travelocity Clone website. Which is an online travel agency owned by Expedia Group. We added functionality like Signup, Login, Search Hotels & Cars, add to cart, and Payment Gateway. We used React, Redux, JavaScript, CSS, and Material UI to build this website. This was a collaborative project made by 4 members Executed in 5 days.
 
 - [@bhargavi35](https://github.com/bhargavi35)
 - [@641krishna](https://github.com/641krishna)
