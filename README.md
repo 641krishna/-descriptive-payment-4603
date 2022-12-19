@@ -12,7 +12,7 @@ This was a collaborative project made by 4 members Executed in 5 days. We worked
 
 #  Deploy Link 
 
-  Netlify: https://thriving-hamster-345ef4.netlify.app/
+  Netlify: https://travelcity-clone.netlify.app/
 
 
 ---
