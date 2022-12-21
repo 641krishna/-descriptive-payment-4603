@@ -1,0 +1,6 @@
+export const CAR_LOADING="CAR_LOADING";
+export const CAR_FETCH_DATA="CAR_FETCH_DATA";
+export const CAR_ERROR="CAR_ERROR";
+export const CAR_REFRESH="CAR_REFRESH";
+export const CAR_TYPE_FILTER="CAR_TYPE_FILTER";
+export const CAR_INPUT_FILTER="CAR_INPUT_FILTER"
