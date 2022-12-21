@@ -7,13 +7,6 @@ import { useStyles } from "@material-ui/pickers/views/Calendar/Day";
 import { useNavigate } from "react-router-dom";
 
 
-// const useStyles = makeStyles((theme) => ({
-    
-        
-// })
-// );
-
-
 export default function MaterialUIPickers({ props, type, startDate }) {
 
     // const classes = useStyles();
