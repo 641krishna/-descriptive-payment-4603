@@ -103,7 +103,7 @@ export default function ScrollableTabsButtonForce() {
   const handleSearchByQuery = () => {
     setIsSearching(false);
 
-    axios.get(`https://my-api-data.herokuapp.com/places?q=${query}&_limit=50`).then((res) => {
+    axios.get(`https://travelocity.onrender.com/hotel?q=${query}&_limit=50`).then((res) => {
       setSearchQueryResult(res.data);
     }).catch((err) => {
       console.log(err);

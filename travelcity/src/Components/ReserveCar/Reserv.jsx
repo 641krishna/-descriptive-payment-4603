@@ -181,7 +181,7 @@ export const Reserv = () => {
     }, [])
     const getData = () => {
         setLoding(true)
-        fetch(`https://carapi20.herokuapp.com/Car/${id}`)
+        fetch(`https://travelocity.onrender.com/Car/${id}`)
             .then((res) => res.json())
             .then((res) => setCarData(res))
             .catch((err) => setError(true))

@@ -135,7 +135,7 @@ export const HotelList = () => {
     setloading(true);
     axios
       // .get("https://my-api-data.herokuapp.com/data")
-      .get("https://carapi20.herokuapp.com/hotel")
+      .get("https://travelocity.onrender.com/hotel")
       .then((res) => {
         const { data } = res;
         setData(data);

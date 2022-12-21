@@ -7,7 +7,6 @@ import { logOut } from "../../Store/Action";
 import Header from "./Header";
 
 export function Navbar() {
-    const userName = useSelector((state) => state.Auth.userName);
     const dispatch = useDispatch();
     const handleSignOut = () => {
         dispatch(logOut());

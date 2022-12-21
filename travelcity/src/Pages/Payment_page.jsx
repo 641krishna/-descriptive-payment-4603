@@ -6,7 +6,7 @@ import { useAxios } from "../Hooks/useAxios";
 
 export const PaymentPage = () => {
     const { id } = useParams();
-    const { hotelData } = useAxios(`https://my-api-data.herokuapp.com/data/?hotelId=${id}`);
+    const { hotelData } = useAxios(`https://travelocity.onrender.com/hotel?hotelId=${id}`);
     useEffect(() => {
         window.scrollTo(0, 0);
         setTimeout(() => { }, 2500);

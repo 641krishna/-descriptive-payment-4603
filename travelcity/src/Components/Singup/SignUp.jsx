@@ -102,7 +102,7 @@ export const SignUp = () => {
         // console.log(state)
         axios
             // .post("http://localhost:8080/users",state)
-            .post("https://carapi20.herokuapp.com/users", state)
+            .post("https://travelocity.onrender.com/users", state)
             .then((response) => {
                 // console.log(response.status)
                 // history.push("/signIn");
