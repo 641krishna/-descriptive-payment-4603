@@ -12,7 +12,7 @@ export const CarError=(val)=>{
 export const CarFetch=(page=1)=>async(dispatch)=>{
         dispatch(CarLoading(true))
         try{
-            let response = await axios.get(`https://travelocity.onrender.com/Car?_page=${page}&_limit=5`);
+            let response = await axios.get(`${process.env.REACT_APP_CAR_API}?_page=${page}&_limit=5`);
             const data = response.data;
             dispatch({type:CAR_FETCH_DATA,payload:data})
         }
@@ -27,7 +27,7 @@ export const CarFetch=(page=1)=>async(dispatch)=>{
 export const CarRefresh=()=>async(dispatch)=>{
     dispatch(CarLoading(true))
     try{
-        let response = await axios.get(`https://travelocity.onrender.com/Car`);
+        let response = await axios.get(`${process.env.REACT_APP_CAR_API}`);
         const data = response.data;
         dispatch({type:CAR_REFRESH,payload:data})
     }

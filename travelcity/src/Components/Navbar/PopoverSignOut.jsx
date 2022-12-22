@@ -64,7 +64,7 @@ export default function PopoverSignOut() {
             <p>Feedback</p>
             <hr />
             <br />
-          <h4 onClick={() => logout({ returnTo: window.location.origin })}>
+          <h4 onClick={handleSignOut}>
           {/* <h4 onClick={() => handleSignOut()}> */}
           Sign Out
         </h4>
