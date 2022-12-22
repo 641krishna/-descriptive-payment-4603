@@ -13,12 +13,16 @@ import CardTravelIcon from '@mui/icons-material/CardTravel';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import "./drawer.scss";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logOut } from "../../Store/Action";
 
-const pages = ["SignUp", "Login", "List your property", "Trip"];
 
 const DrawerComp = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const userName = useSelector((state) => state.Auth);
+  const dispatch = useDispatch();
+  console.log(userName)
 
   const navigate = useNavigate();
 
@@ -29,6 +33,13 @@ const DrawerComp = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleSignOut = () => {
+    if(userName.login){
+      dispatch(logOut());
+    }
+    navigate("/signIn")
+  }
 
   const open = Boolean(anchorEl);
 
@@ -42,13 +53,18 @@ const DrawerComp = () => {
         onClose={() => setOpenDrawer(false)}
       >
         <List>
-          {pages.map((page, index) => (
-            <ListItemButton key={index}>
+            <ListItemButton key={0}>
               <ListItemIcon>
-                <ListItemText>{page}</ListItemText>
+                <ListItemText onClick={()=>navigate("/signUp")}>{userName.login?userName.userName
+:"SignUp"}</ListItemText>
               </ListItemIcon>
             </ListItemButton>
-          ))}
+            <ListItemButton key={1}>
+              <ListItemIcon>
+                <ListItemText onClick={handleSignOut}>{userName.login?"logout":"login"}</ListItemText>
+              </ListItemIcon>
+            </ListItemButton>
+  
         </List>
       </Drawer>
      <div className="navRightSmlScreen">
