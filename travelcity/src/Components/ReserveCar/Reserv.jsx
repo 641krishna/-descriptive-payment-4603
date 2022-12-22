@@ -181,7 +181,7 @@ export const Reserv = () => {
     }, [])
     const getData = () => {
         setLoding(true)
-        fetch(`https://travelocity.onrender.com/Car/${id}`)
+        fetch(`${process.env.REACT_APP_CAR_API}/${id}`)
             .then((res) => res.json())
             .then((res) => setCarData(res))
             .catch((err) => setError(true))
