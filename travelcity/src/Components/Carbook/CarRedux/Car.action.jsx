@@ -28,7 +28,7 @@ export const CarRefresh=()=>async(dispatch)=>{
     dispatch(CarLoading(true))
     try{
         let response = await axios.get(`${process.env.REACT_APP_CAR_API}`);
-        const data = response.data;
+        const {data} = response;
         dispatch({type:CAR_REFRESH,payload:data})
     }
     catch(err){
