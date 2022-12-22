@@ -100,6 +100,7 @@ export default function ScrollableTabsButtonForce() {
     // eslint-disable-next-line
   }, [query])
 
+  
   const handleSearchByQuery = () => {
     setIsSearching(false);
 
