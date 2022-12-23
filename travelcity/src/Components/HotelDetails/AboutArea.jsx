@@ -17,7 +17,6 @@ const AboutArea = () => {
                         <h3 style={{ margin: '10px 0' }}>New Delhi</h3>
                         <p>Located in New Delhi, Taj Palace, New Delhi is connected to the convention center. Rashtrapati Bhavan and India Gate are notable landmarks, and travelers looking to shop may want to visit The Chanakya and Khan Market. Traveling with kids? Consider Worlds of Wonder, or check out an event or a game at Jawaharlal Nehru Stadium. Spend some time exploring the area's activities, including outlet shopping and golfing</p>
                     </div>
-                    {/* <div className={styles.map}>Map is pending...</div> */}
                     <div className={styles.details}>
                         <div className={styles.nearby}>
                             <Box className={styles.flex_1}>
