@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Rooms from './Rooms'
 import AboutArea from './AboutArea'
 import Amenities from './Amenities'
-// import HotelMap from './HotelMap'
 import HotelOverview from './HotelOverview'
 import Policies from './Policies'
 import Review from './Review'
@@ -96,7 +95,6 @@ const HotelDetails = ({ hotelData, id }) => {
                     <HotelOverview hotelData={hotelData} />
                 </div>
                 <div className={styles.right_1}>
-                    {/* <HotelMap hotelData={hotelData} /> */}
                 </div>
             </div>
 

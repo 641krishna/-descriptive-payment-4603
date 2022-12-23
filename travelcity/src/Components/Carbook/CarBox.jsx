@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import {Link} from 'react-router-dom';
 import {CircularProgress,InputLabel,MenuItem,FormControl,Select} from "@mui/material";
-//import { Filter } from '../Filters/CarFilter';
 import person from "./CarLogoImages/person.png";
 import milege from "./CarLogoImages/milege.png";
 import star from "./CarLogoImages/star.png";

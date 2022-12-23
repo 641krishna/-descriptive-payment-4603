@@ -10,7 +10,6 @@ const MainHotelPage = () => {
     const [isLoading, setIsLoading] = useState(false)
 
     const { hotelData } = useAxios(`https://travelocity.onrender.com/hotel?hotelId=${id}`)
-    // console.log('hotelData:', hotelData)
 
     useEffect(() => {
         setTimeout(() => {

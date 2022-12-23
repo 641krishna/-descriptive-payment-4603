@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import styles from "./Home.module.scss";
 import Searching from './Searching';
 import { Button } from '@material-ui/core';
-// import BarcodeSection from "../../Resources/Barcodesection.PNG";
 
 export function Home() {
   useEffect(() => {
@@ -201,8 +200,6 @@ export function Home() {
             <h4>Scan the QR code</h4>
           </div>
         </div>
-
-        {/* <h1 className={styles.destination}>Destination ideas to plan your next trip</h1> */}
         <div className={styles.BarcodeSection}>
           
         </div> 
