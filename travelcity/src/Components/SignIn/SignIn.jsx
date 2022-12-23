@@ -3,7 +3,6 @@ import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import AppleIcon from "@material-ui/icons/Apple";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import VerifiedUserRoundedIcon from "@material-ui/icons/VerifiedUserRounded";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
@@ -22,7 +21,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginSuccess } from "../../Store/Action";
-// import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./SignIn.scss";
@@ -55,10 +53,10 @@ const useStyles = makeStyles((theme) => ({
 
     SocialBtn: {
         width: "50%",
-        padding : "10px",
+        padding: "10px",
         marginBottom: "20px",
         display: "flex",
-        justifyContent : "space-around",
+        justifyContent: "space-around",
     },
 
     btnColor: {},
@@ -94,10 +92,8 @@ export const SignIn = () => {
     const classes = useStyles();
     const [input, setInput] = useState(initState);
     const dispatch = useDispatch();
-    // const history = useHistory();
     const navigate = useNavigate();
-    const userName = useSelector((state) => state.Auth.userName);
-    const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+    const { loginWithRedirect} = useAuth0();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -107,35 +103,33 @@ export const SignIn = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const  {data}  = await axios.get(
-            
-            `https://travelocity.onrender.com/users/?email=${input.email}`
-        );
-      
+        axios.post(`https://auth-2niv.onrender.com/auth/login`, {
+            email: input.email,
+            password: input.password
+        })
+            .then((res) => {
+                dispatch(loginSuccess(res.data.user.email));
+                swal("Logged in successfully");
+                navigate("/");
+            })
+            .catch((err) => {
+                swal("Invalid Credentials!");
+                dispatch(loginFailure())
+            })
 
-        if(data.email === input.email  && data.password === input.password) {
-
-            dispatch(loginSuccess(data.firstName));
-            swal("Logged in successfully");
-            navigate("/");
-           
-        } else {    
-            swal("Invalid Credentials!");
-            dispatch(loginFailure());
-        }
     };
 
     return (
         <Wrapper id="option">
             <Container id="GoogleLinks" className={classes.option}>
-            <h3>Sign in With : </h3>
+                <h3>Sign in With : </h3>
                 <Button
                     className={classes.SocialBtn}
                     variant="outlined"
                     color="default"
                     onClick={() => loginWithRedirect()}
                 >
-                  <GoogleIcon /> <FacebookIcon />  <LinkedInIcon/>  <GitHubIcon />  
+                    <GoogleIcon /> <FacebookIcon />  <LinkedInIcon />  <GitHubIcon />
                 </Button>
                 <div className="messege">
                     <span>
