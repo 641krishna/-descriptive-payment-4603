@@ -45,7 +45,6 @@ const useStyle = makeStyles({
 
 
 export const FinalSubmit = () => {
-    // const history = useHistory()
     const classes = useStyle();
     const navigate = useNavigate();
 
@@ -63,7 +62,6 @@ export const FinalSubmit = () => {
                     timer: 3000,
                 });
                 setTimeout(() => {
-                    // history.push('/')
                     navigate('/')
                 }, 3200)
             } else {
