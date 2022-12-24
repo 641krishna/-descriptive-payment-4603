@@ -21,7 +21,6 @@ export const SliderRange = () => {
     const [popular, setPopular] = useState("");
     const handleChange = (event) => {
         setPopular(event.target.value);
-        // console.log(popular);
     };
 
     return (
@@ -29,10 +28,10 @@ export const SliderRange = () => {
             <div className="filter-title">Price per night</div>
             <Slider
                 getAriaLabel={() => 'Temperature range'}
-                value={value}
+                // value={value}
                 onChange={handleChange}
                 valueLabelDisplay="auto"
-                getAriaValueText={valuetext}
+                // getAriaValueText={valuetext}
             />
 
         </Wrapper>
