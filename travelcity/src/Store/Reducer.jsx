@@ -22,7 +22,6 @@ export const Authreducer = (state = initState, action) => {
         login: false,
       };
     case LOG_OUT:
-      // setData("username", "");
       return {
         ...state,
         login: false,
