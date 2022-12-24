@@ -19,7 +19,7 @@ import VerifiedUserRoundedIcon from "@material-ui/icons/VerifiedUserRounded";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import { useState } from "react";
 import axios from "axios";
-import swal from "sweetalert";
+// import swal from "sweetalert";
 import "./SignUp.scss";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -88,18 +88,16 @@ const initState = {
 export const SignUp = () => {
     const classes = useStyles();
     const [state, setState] = useState(initState);
-    // const history = useHistory();
     const navigate = useNavigate();
-    const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+    const {loginWithRedirect} = useAuth0();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setState({ ...state, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log(state)
         axios
             .post("https://travelocity.onrender.com/users", state)
             .then((response) => {
@@ -227,13 +225,13 @@ export const SignUp = () => {
                             variant="contained"
                             color="primary"
                             className={classes.submit}
-                            
+
                         >
-                             <Link to="/signUp">Sign Up</Link>
+                             <Link to="/signUp" style={{color:"white", fontSize:"15px", textDecoration:"none"}}>Sign Up</Link>
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link to="/signIn">Already have an account? Sign in</Link>
+                                <Link to="/signIn" style={{color:"blue", fontSize:"15px", textDecoration:"none"}}>Already have an account? Sign in</Link>
                             </Grid>
                         </Grid>
                     </form>
