@@ -15,8 +15,8 @@ const Wrapper = styled.div`
   }
 
   .card-image {
-    height: 100%;
-    width: 30%;
+    height: 200px;
+    width: 40%;
     border-radius: 0.5rem 0 0 0.5rem;
   }
 
@@ -54,7 +54,6 @@ const Wrapper = styled.div`
   .rating {
     font-size: 0.875rem;
     color: #505c66;
-
     color: #8f8f8f;
   }
 

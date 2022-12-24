@@ -20,8 +20,6 @@ export default function PopoverSignOut() {
   let NameofUser = "";
   if(isAuthenticated) NameofUser = user.name;
   else NameofUser = userName;
-  console.log(NameofUser)
-
   
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
@@ -35,7 +33,6 @@ export default function PopoverSignOut() {
   };
 
   
-  // console.log(userName);
   const handleSignOut = () => {
     dispatch(logOut());
   }

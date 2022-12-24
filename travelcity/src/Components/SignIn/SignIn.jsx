@@ -3,7 +3,6 @@ import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import AppleIcon from "@material-ui/icons/Apple";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import VerifiedUserRoundedIcon from "@material-ui/icons/VerifiedUserRounded";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
@@ -11,7 +10,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { useState } from "react";
@@ -22,10 +21,10 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginSuccess } from "../../Store/Action";
-// import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./SignIn.scss";
+import { stringify } from "uuid";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -108,17 +107,14 @@ export const SignIn = () => {
         e.preventDefault();
 
         const  {data}  = await axios.get(
-            
             `https://travelocity.onrender.com/users/?email=${input.email}`
         );
       
 
         if(data.email === input.email  && data.password === input.password) {
-
             dispatch(loginSuccess(data.firstName));
             swal("Logged in successfully");
-            navigate("/");
-           
+            navigate("/");          
         } else {    
             swal("Invalid Credentials!");
             dispatch(loginFailure());
@@ -202,12 +198,14 @@ export const SignIn = () => {
                         </Button>
                         <Grid container>
                             <Grid item xs>
-                                <Link to="#" variant="body2">
+                                <Link to="#" variant="body2" style={{color:"blue", fontSize:"15px", textDecoration:"none"}}>
                                     Forgot password?
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link to="/signUp">{"Don't have an account? Sign Up"}</Link>
+                                <Link to="/signUp" style={{color:"blue", fontSize:"15px", textDecoration:"none"}}>
+                                    {"Don't have an account? Sign Up"}
+                                </Link>
                             </Grid>
                         </Grid>
                     </form>

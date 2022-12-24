@@ -164,7 +164,6 @@ export default function ScrollableTabsButtonForce() {
       endDate: endDate,
       trevelersRoomCnt: trevelersRoomCnt,
     }
-    // console.log(obj)
     localStorage.setItem('inputsData', JSON.stringify(obj));
     // navigate("/hotels");
   }

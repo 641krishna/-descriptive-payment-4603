@@ -26,8 +26,6 @@ const Header = () => {
   const dispatch = useDispatch();
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
-  // console.log(userName);
-
   const handleSignOut = () => {
     dispatch(logOut());
   }

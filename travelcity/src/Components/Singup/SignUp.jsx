@@ -10,7 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import styled from "styled-components";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import AppleIcon from "@material-ui/icons/Apple";
+// import AppleIcon from "@material-ui/icons/Apple";
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -19,7 +19,7 @@ import VerifiedUserRoundedIcon from "@material-ui/icons/VerifiedUserRounded";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import { useState } from "react";
 import axios from "axios";
-import swal from "sweetalert";
+// import swal from "sweetalert";
 import "./SignUp.scss";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -99,12 +99,10 @@ export const SignUp = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(state)
         axios
             // .post("http://localhost:8080/users",state)
             .post("https://travelocity.onrender.com/users", state)
             .then((response) => {
-                // console.log(response.status)
                 // history.push("/signIn");
                 alert("Registered Successfully");
                 navigate("/signIn")
@@ -232,11 +230,11 @@ export const SignUp = () => {
                             className={classes.submit}
                             
                         >
-                             <Link to="/signUp">Sign Up</Link>
+                             <Link to="/signUp" style={{color:"white", fontSize:"15px", textDecoration:"none"}}>Sign Up</Link>
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link to="/signIn">Already have an account? Sign in</Link>
+                                <Link to="/signIn" style={{color:"blue", fontSize:"15px", textDecoration:"none"}}>Already have an account? Sign in</Link>
                             </Grid>
                         </Grid>
                     </form>

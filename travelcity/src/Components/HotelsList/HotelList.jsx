@@ -6,7 +6,7 @@ import axios from "axios";
 import styled from "styled-components";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import logo from "../../logo.svg";
-import Ads from "../HotelDetails/Ads";
+// import Ads from "../HotelDetails/Ads";
 import {
   FormControlLabel,
   makeStyles,
@@ -91,7 +91,6 @@ export const HotelList = () => {
 
   useEffect(() => {
     getData();
-    // console.log(hotels);
   }, []);
 
   const handleQueryChange = (value) => {
@@ -108,7 +107,7 @@ export const HotelList = () => {
           return false;
       })
 
-      if(SearchedData.length==0 || value ==="") getData();
+      if(SearchedData.length===0 || value ==="") getData();
        else setHotels(SearchedData)
       }
   };
@@ -190,7 +189,7 @@ export const HotelList = () => {
             query={searchQuery}
           />
 
-          {/* ---------------------------------------------------------------------------------------------------Star rating  */}
+          {/* ------------------------------------------Star rating---------------------------------------------------------  */}
           <div className="filter-title">Star rating</div>
           <Button
             onClick={() => {
@@ -248,7 +247,7 @@ export const HotelList = () => {
             5
           </Button>
 
-          {/* ------------------------------------------------------------------------------------------------------- Your Budget rating  */}
+          {/* --------------------------------------Your Budget rating----------------------------------------------- */}
           <div className="filter-title">Your Budget</div>
           <div className="popular-filter">
             <FormControl component="fieldset">
@@ -299,7 +298,7 @@ export const HotelList = () => {
           <Mealplans />
         </div>
 
-        {/*------------------------------------------------------------------------------------------>>>>>> Hotel List  */}
+        {/*-----------------------------------------Hotel List---------------------------------------- */}
 
         <div className="list">
           {loading ? (
@@ -321,10 +320,9 @@ export const HotelList = () => {
           ) : (<h1 style={{color : "red", textAlign:"center", marginTop:"300px"}}>No hotels exist !</h1>)
         }
         </div>
-        <div className="advSection">
+        {/* <div className="advSection">
           <Ads />
-          <Ads />
-        </div>
+        </div> */}
       </Wrapper>
     </>
   );
