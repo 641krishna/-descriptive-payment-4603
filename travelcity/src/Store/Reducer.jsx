@@ -10,6 +10,8 @@ const initState = {
 export const Authreducer = (state = initState, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
+      setData("username", action.payload);
+      setData1("Login", true);
       return {
         ...state,
         login: getData1("Login"),
