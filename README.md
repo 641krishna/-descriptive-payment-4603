@@ -12,7 +12,7 @@ This was a collaborative project made by 4 members Executed in 5 days. We worked
 
 #  Deploy Link 
 
-  Netlify: https://travelocity-clone-git-main-damanjot6767.vercel.app/
+  Vercel: https://travelocity-clone-git-main-damanjot6767.vercel.app/
 
 
 ---
