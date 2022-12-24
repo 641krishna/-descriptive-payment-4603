@@ -18,7 +18,6 @@ const DrawerComp = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const userName = useSelector((state) => state.Auth);
   const dispatch = useDispatch();
-  // console.log(userName)
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   const navigate = useNavigate();

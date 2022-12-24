@@ -18,7 +18,7 @@ import VerifiedUserRoundedIcon from "@material-ui/icons/VerifiedUserRounded";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import { useState } from "react";
 import axios from "axios";
-import swal from "sweetalert";
+// import swal from "sweetalert";
 import "./SignUp.scss";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -233,7 +233,7 @@ export const SignUp = () => {
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link to="/signIn">Already have an account? Sign in</Link>
+                                <Link to="/signIn" style={{color:"blue", fontSize:"15px", textDecoration:"none"}}>Already have an account? Sign in</Link>
                             </Grid>
                         </Grid>
                     </form>

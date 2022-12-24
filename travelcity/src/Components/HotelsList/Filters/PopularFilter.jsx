@@ -25,7 +25,6 @@ export const PopularFilter = () => {
     const [popular, setPopular] = useState("");
     const handleChange = (event) => {
         setPopular(event.target.value);
-        // console.log(popular);
     };
 
     return (

@@ -50,8 +50,9 @@
 }
 
 .option>button {
-    margin-left: 36%;
-    padding: 10px 15px;
+    width: 100px;
+    margin-left: 2%;
+    padding: 0px 10px;
     background: #2A6EC1;
     color: white;
     border: none;

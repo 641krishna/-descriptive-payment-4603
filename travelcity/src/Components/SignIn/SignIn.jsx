@@ -10,7 +10,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { useState } from "react";
@@ -24,6 +24,7 @@ import { loginFailure, loginSuccess } from "../../Store/Action";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./SignIn.scss";
+import { stringify } from "uuid";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -196,12 +197,14 @@ export const SignIn = () => {
                         </Button>
                         <Grid container>
                             <Grid item xs>
-                                <Link to="#" variant="body2">
+                                <Link to="#" variant="body2" style={{color:"blue", fontSize:"15px", textDecoration:"none"}}>
                                     Forgot password?
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link to="/signUp">{"Don't have an account? Sign Up"}</Link>
+                                <Link to="/signUp" style={{color:"blue", fontSize:"15px", textDecoration:"none"}}>
+                                    {"Don't have an account? Sign Up"}
+                                </Link>
                             </Grid>
                         </Grid>
                     </form>
