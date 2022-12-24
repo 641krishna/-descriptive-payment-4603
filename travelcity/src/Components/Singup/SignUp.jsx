@@ -231,7 +231,7 @@ export const SignUp = () => {
                             className={classes.submit}
 
                         >
-                             <Link to="/signUp">Sign Up</Link>
+                             <Link to="/signUp" style={{color:"white", fontSize:"15px", textDecoration:"none"}}>Sign Up</Link>
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
