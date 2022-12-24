@@ -189,7 +189,6 @@ export const Reserv = () => {
     }
 
     const handleReserve=()=>{
-        // let totalCarPrice = (5+carData.price);
         let paymentDet = {
             type : "car",
             tax : 5,
@@ -230,7 +229,6 @@ export const Reserv = () => {
                                     <p style={{ color: "#0D5AB9", marginLeft: "5px", textDecoration: "underline", cursor: "pointer" }}>See more</p>
                                 </div>
                                 <div >
-                                    {/* <img src="https://mediaim.expedia.com/cars/40/3a591a6a-3820-47f4-ae4e-569400f1ed87.jpg?impolicy=resizecrop&ra=fit&rh=165&rw=165" alt="" /> */}
                                     <img src={carData.url} alt="" width="100%" />
                                 </div>
                             </div>
