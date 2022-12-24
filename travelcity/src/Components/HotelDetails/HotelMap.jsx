@@ -5,7 +5,6 @@ const HotelMap = ({ hotelData }) => {
 
     const { longitude, latitude } = hotelData.location
     const position = [longitude, latitude]
-    // const position = [51.505, -0.09]
 
     return (
         <MapContainer center={position} zoom={13} scrollWheelZoom={false}>

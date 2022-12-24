@@ -54,10 +54,10 @@ const useStyles = makeStyles((theme) => ({
 
     SocialBtn: {
         width: "50%",
-        padding : "10px",
+        padding: "10px",
         marginBottom: "20px",
         display: "flex",
-        justifyContent : "space-around",
+        justifyContent: "space-around",
     },
 
     btnColor: {},
@@ -93,10 +93,8 @@ export const SignIn = () => {
     const classes = useStyles();
     const [input, setInput] = useState(initState);
     const dispatch = useDispatch();
-    // const history = useHistory();
     const navigate = useNavigate();
-    const userName = useSelector((state) => state.Auth.userName);
-    const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+    const { loginWithRedirect} = useAuth0();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -107,14 +105,17 @@ export const SignIn = () => {
         e.preventDefault();
 
         const  {data}  = await axios.get(
+            
             `https://travelocity.onrender.com/users/?email=${input.email}`
         );
       
 
         if(data.email === input.email  && data.password === input.password) {
+
             dispatch(loginSuccess(data.firstName));
             swal("Logged in successfully");
-            navigate("/");          
+            navigate("/");
+           
         } else {    
             swal("Invalid Credentials!");
             dispatch(loginFailure());
@@ -124,14 +125,14 @@ export const SignIn = () => {
     return (
         <Wrapper id="option">
             <Container id="GoogleLinks" className={classes.option}>
-            <h3>Sign in With : </h3>
+                <h3>Sign in With : </h3>
                 <Button
                     className={classes.SocialBtn}
                     variant="outlined"
                     color="default"
                     onClick={() => loginWithRedirect()}
                 >
-                  <GoogleIcon /> <FacebookIcon />  <LinkedInIcon/>  <GitHubIcon />  
+                    <GoogleIcon /> <FacebookIcon />  <LinkedInIcon />  <GitHubIcon />
                 </Button>
                 <div className="messege">
                     <span>

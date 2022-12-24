@@ -165,7 +165,6 @@ export default function ScrollableTabsButtonForce() {
       trevelersRoomCnt: trevelersRoomCnt,
     }
     localStorage.setItem('inputsData', JSON.stringify(obj));
-    // navigate("/hotels");
   }
 
   const handleAdulTrevelersCnt = (e, val) => {

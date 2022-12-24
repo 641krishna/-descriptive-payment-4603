@@ -10,7 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import styled from "styled-components";
 import FacebookIcon from "@material-ui/icons/Facebook";
-// import AppleIcon from "@material-ui/icons/Apple";
+import AppleIcon from "@material-ui/icons/Apple";
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -88,21 +88,22 @@ const initState = {
 export const SignUp = () => {
     const classes = useStyles();
     const [state, setState] = useState(initState);
-    // const history = useHistory();
     const navigate = useNavigate();
-    const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+    const {loginWithRedirect} = useAuth0();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setState({ ...state, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        // console.log(state)
         axios
             // .post("http://localhost:8080/users",state)
             .post("https://travelocity.onrender.com/users", state)
             .then((response) => {
+                // console.log(response.status)
                 // history.push("/signIn");
                 alert("Registered Successfully");
                 navigate("/signIn")
@@ -228,9 +229,9 @@ export const SignUp = () => {
                             variant="contained"
                             color="primary"
                             className={classes.submit}
-                            
+
                         >
-                             <Link to="/signUp" style={{color:"white", fontSize:"15px", textDecoration:"none"}}>Sign Up</Link>
+                             <Link to="/signUp">Sign Up</Link>
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>

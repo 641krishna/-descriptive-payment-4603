@@ -10,7 +10,6 @@ import LocalLaundryServiceIcon from '@material-ui/icons/LocalLaundryService';
 import WifiIcon from '@material-ui/icons/Wifi';
 import HotTubIcon from '@material-ui/icons/HotTub';
 import FreeBreakfastIcon from '@material-ui/icons/FreeBreakfast';
-// import { MdNavigateNext } from 'react-icons/md';
 
 
 const HotelOverview = ({ hotelData }) => {
@@ -25,7 +24,6 @@ const HotelOverview = ({ hotelData }) => {
                     <p style={{ color: '#505c66', fontSize: '14px' }}>Guests rated this property 4.7/5 for cleanliness.</p>
                     <Box className={styles.flex_1}>
                         <p className={styles.more}> {Math.floor((Math.random() * 1000) + 1)} reviews </p>
-                        {/* <span><MdNavigateNext /></span> */}
                     </Box>
                 </div>
                 <div className={styles.amenities}>
@@ -50,7 +48,6 @@ const HotelOverview = ({ hotelData }) => {
                     </Box>
                     <Box className={styles.flex_1}>
                         <p className={styles.more}>See all</p>
-                        {/* <span><MdNavigateNext /></span> */}
                     </Box>
                 </div>
                 <div className={styles.amenities_2}>
@@ -85,7 +82,6 @@ const HotelOverview = ({ hotelData }) => {
                     </Box>
                     <Box className={styles.flex_1}>
                         <p className={styles.more}>See all</p>
-                        {/* <span><MdNavigateNext /></span> */}
                     </Box>
                 </div>
                 <div className={styles.safety_2}>
