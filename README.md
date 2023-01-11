@@ -54,11 +54,5 @@ This was a collaborative project made by 4 members Executed in 5 days. We worked
   
 ---
 
-### About Project
-
-> We did this project within 4-5 days in our unit-5 construct week. We worked on backend parts with includes various types of libraries into it and we have also added database for our project so user and course details will be saved and can be used accordingly. We have also added some cool functionality in our courses page where you can filter the courses according to your choice and user can Signup and Login to buy the products.
-
----
-
 Blog:
 https://medium.com/@chellabhargavi2002/collaborative-project-at-masai-school-travelocity-clone-a00d39e6d814
