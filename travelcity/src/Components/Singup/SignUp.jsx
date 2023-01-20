@@ -244,7 +244,6 @@ export const SignUp = () => {
                     </form>
                 </div>
             </Container>
-
         </Wrapper>
     );
 };
