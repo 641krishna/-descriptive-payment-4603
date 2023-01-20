@@ -88,6 +88,7 @@ const initState = {
 export const SignUp = () => {
     const classes = useStyles();
     const [state, setState] = useState(initState);
+    const[loading,setLoading]=useState(false);
     const navigate = useNavigate();
     const {loginWithRedirect} = useAuth0();
 
@@ -98,19 +99,25 @@ export const SignUp = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+        console.log("working")
         axios
-            .post("https://travelocity.onrender.com/users", state)
+            .post("https://auth-2niv.onrender.com/auth/register", state)
             .then((response) => {
                 alert("Registered Successfully");
+                setLoading(false)
                 navigate("/signIn")
             })
-            .catch((err) => alert("Something went wrong !"))
+            .catch((err) => {alert("Something went wrong !");
+                             setLoading(false)
+        })
     };
 
     return (
         <Wrapper id="mainContainer">
             <Container id="container" className={classes.option}>
                 <h3>Sign in With : </h3>
+                {loading?<h1>Processing, please wait...</h1>:<h1></h1>}
                 <Button
                     className={classes.SocialBtn}
                     variant="outlined"
@@ -144,7 +151,6 @@ export const SignUp = () => {
                     <form
                         className={classes.form}
                         noValidate={false}
-                        onSubmit={handleSubmit}
                     >
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>
@@ -225,7 +231,8 @@ export const SignUp = () => {
                             variant="contained"
                             color="primary"
                             className={classes.submit}
-
+                            disabled={loading===true}
+                            onClick={handleSubmit}
                         >
                              <Link to="/signUp" style={{color:"white", fontSize:"15px", textDecoration:"none"}}>Sign Up</Link>
                         </Button>

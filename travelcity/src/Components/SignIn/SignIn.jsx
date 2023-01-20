@@ -92,6 +92,7 @@ const initState = {
 export const SignIn = () => {
     const classes = useStyles();
     const [input, setInput] = useState(initState);
+    const[loading,setLoading]=useState(false)
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { loginWithRedirect} = useAuth0();
@@ -103,7 +104,7 @@ export const SignIn = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        setLoading(true)
         axios.post(`https://auth-2niv.onrender.com/auth/login`, {
             email: input.email,
             password: input.password
@@ -111,10 +112,12 @@ export const SignIn = () => {
             .then((res) => {
                 dispatch(loginSuccess(res.data.user.email));
                 swal("Logged in successfully");
+                setLoading(false)
                 navigate("/");
             })
             .catch((err) => {
                 swal("Invalid Credentials!");
+                setLoading(false)
                 dispatch(loginFailure())
             })
 
@@ -124,6 +127,7 @@ export const SignIn = () => {
         <Wrapper id="option">
             <Container id="GoogleLinks" className={classes.option}>
                 <h3>Sign in With : </h3>
+                {loading?<h1>Processing, please wait...</h1>:<h1></h1>}
                 <Button
                     className={classes.SocialBtn}
                     variant="outlined"
@@ -192,6 +196,7 @@ export const SignIn = () => {
                             variant="contained"
                             color="primary"
                             className={classes.submit}
+                            disabled={loading===true}
                         >
                             Sign In
                         </Button>
